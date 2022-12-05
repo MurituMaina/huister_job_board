@@ -1,3 +1,19 @@
-h1{
-    color:aqua
-}
+
+ .navbar {
+    float: right;
+     padding: 25px;
+     display: flex;
+     align-items: center;
+    }
+ 
+   .navbar a {
+     border-radius: 20px;
+     background-color: #1934cf;
+     color: azure;
+     margin-left: 20px;
+     text-decoration: none;
+     padding: 10px;
+   }
+   .navbar a:hover {
+     color: #070103;
+   }
