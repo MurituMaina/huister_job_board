@@ -16,7 +16,7 @@ function ViewJobs() {
 
     }) 
     
-    },[])
+    })
     jobs.map(patient => {
         console.log(jobs)
     })
