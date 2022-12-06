@@ -1,0 +1,58 @@
+{
+  "myjobs": [
+    {
+      "id": 1,
+      "title": "Software Dev",
+      "company": "Moringa",
+      "description": "Salary: $500"
+    },
+    {
+      "id": 2,
+      "title": "Tech Mentor",
+      "company": "Saf",
+      "description": "Salary: $5000"
+    },
+    {
+      "title": "Dev",
+      "company": "Saf",
+      "description": "Remote",
+      "id": 3
+    },
+    {
+      "title": "Cleaner",
+      "company": "Moringa",
+      "description": "Cleaning services",
+      "id": 4
+    },
+    {
+      "title": "Cleaner",
+      "company": "Moringa",
+      "description": "cleaning",
+      "id": 5
+    },
+    {
+      "title": "developer",
+      "company": "Moringa",
+      "description": "Coding, technical mentor",
+      "id": 6
+    },
+    {
+      "title": "tutor",
+      "company": "Moi",
+      "description": "Teaching",
+      "id": 7
+    },
+    {
+      "title": "",
+      "company": "",
+      "description": "",
+      "id": 8
+    },
+    {
+      "title": "Teacher",
+      "company": "KU",
+      "description": "Teaching",
+      "id": 9
+    }
+  ]
+}
