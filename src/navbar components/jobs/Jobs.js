@@ -28,12 +28,13 @@ function handleSubmit(e){
     e.preventDefault();
     
     setWelcomeMessage(true)
-    let apiUrl = "http://localhost:"
+    let apiUrl = "http://localhost:3000/myjobs"
     fetch(apiUrl,{
       method: "POST",
       headers:  {'Content-Type': 'application/json'},
       body: JSON.stringify(jobDetails)
     })
+    alert(`${jobDetails.title} role posted successfully`)
   }
 
   function handleClearing(e){
@@ -52,7 +53,7 @@ function handleSubmit(e){
         <div className='form-holder'>
           <div className='form-content'>
             <div className='form-items'>
-            {welcomeMessage ? <div className='p-3 mb-2 bg-success text-white welcome-message'>{`${jobDetails.title}, posted successfully`}</div> : null}
+            
               <h3><b>Add Job Details</b></h3>
               <form onSubmit={handleSubmit}>
                 <input
@@ -60,7 +61,7 @@ function handleSubmit(e){
                   name='title'
                   required="required"
                   value={jobDetails.title}
-                  placeholder="ENter Job Title"
+                  placeholder="Job Title"
                   onChange={addData}
                 /><br></br><br></br>
                 <input

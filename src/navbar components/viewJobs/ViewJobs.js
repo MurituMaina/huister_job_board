@@ -7,7 +7,7 @@ function ViewJobs() {
  
 
 
-    let apiUrl = "http://localhost:"
+    let apiUrl = "http://localhost:3000/myjobs"
     useEffect(() => {
       fetch(apiUrl)
       .then((res) => res.json())
@@ -16,13 +16,10 @@ function ViewJobs() {
 
     }) 
     
-    })
-    jobs.map(patient => {
-        console.log(jobs)
-    })
-     
+    },[])
+        
     function deleteRecord(id){
-        fetch(`http://localhost:9292/JOBS/${id}`,{
+        fetch(`http://localhost:3000/myjobs${id}`,{
             method: `DELETE`
         }).then((result)=>{
             result.json().then((resp)=>{
@@ -36,34 +33,34 @@ function ViewJobs() {
     <>
         <div>
         <p id='caption'><b>Posted Jobs</b></p>
-        <table className='table table-stripped table-sm'>
-             <thead class='thead-dark'>
+         {jobs.map((jobs, i) => {
+            return (
+             <table>
+                    <thead class='thead-dark'>
                 <tr className='table-head'>
-                    <th scope='col'>Job Title</th></tr>
-                <tr>
-                <th scope='col'>Hiring Company</th> </tr>
+                    <th scope='col'>Job Title</th>
+                    <td>{jobs.title}</td>
+                </tr>
+                <tr className='hiring-company'>
+                  <th scope='col'>Hiring Company</th> 
+                  <td>{jobs.company}</td>
+                </tr>
                 <tr>
                   <th scope='col'>Job Description</th>
+                  <td>{jobs.description}</td>
                 </tr>
             </thead>
-                       
-            {jobs.map((jobs, i) => {
-                return (
                    <tbody>
                         <tr key={i} value={jobs}>
-                            <td>{jobs.title}</td>
-                            <td>{jobs.company}</td>
-                            <td>{jobs.description}</td>
-                            <td>
-							
-                            <a class="action" title="Delete" data-toggle="tooltip" onClick={()=>deleteRecord(jobs.id)}>Delete</a>
+                        <td>
+                          <a class="action" title="Delete" data-toggle="tooltip" onClick={()=>deleteRecord(jobs.id)}>Delete</a>
                         </td>
                         </tr>
                    </tbody>
+                   </table>
                 );
-                })
-            }
-        </table>
+            })
+        }
     </div>
 
     </>
