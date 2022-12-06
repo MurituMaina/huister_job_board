@@ -12,6 +12,8 @@ const PostJob = () => {
   const users = [{ username: "dc@gmail.com", password: "123" }];
   const handleSubmit = (e) => {
   e.preventDefault();
+  // if (authenticated) {
+    // fetch("/recruiters", {
   const account = users.find((user) => user.username === username);
   if (account && account.password === password) {
   localStorage.setItem("authenticated", true);
