@@ -1,22 +1,8 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-  }
- 
-  /* html,
-  body {
-    height: 100%;
-  } */
-  
   .form {
-    /* align-items: center; */
-    /* display: flex; */
-    /* height: auto; */
+    align-items: center;
+    height: auto;
     justify-content: center;
-    padding-top: 20%;
-
+    padding-top: 30%;
     background: #fff;
     border-radius: 4px;
     box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
@@ -24,7 +10,6 @@
     padding-bottom: 66px;
     padding-top: 46px;
     text-align: center;
-    width: 90%;
     background: rgb(65, 64, 64);
     margin-bottom: 98px;
     margin-top: 10%;
@@ -32,21 +17,7 @@
     margin-left: 30%;
   }
   
-  /* .App {
-    background: #fff;
-    border-radius: 4px;
-    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
-    max-width: 615px;
-    padding-bottom: 66px;
-    padding-top: 46px;
-    text-align: center;
-    width: 90%;
-    background: #b5c0ad;
-    margin-bottom: 98px;
-    margin-top: 41px;
-  }  */
-  
-  .input-group {
+ .input-group {
     margin-bottom: 26px;
   }
   .input-group:nth-last-child(-n + 2) {
