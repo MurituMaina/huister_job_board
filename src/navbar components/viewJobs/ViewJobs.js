@@ -7,7 +7,7 @@ function ViewJobs() {
  
 
 
-    let apiUrl = "http://localhost:3000/myjobs"
+    let apiUrl = "/jobs"
     useEffect(() => {
       fetch(apiUrl)
       .then((res) => res.json())
@@ -19,7 +19,7 @@ function ViewJobs() {
     },[])
         
     function deleteRecord(id){
-        fetch(`http://localhost:3000/myjobs${id}`,{
+        fetch(`/jobs/${id}`,{
             method: `DELETE`
         }).then((result)=>{
             result.json().then((resp)=>{

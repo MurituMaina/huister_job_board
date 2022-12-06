@@ -28,13 +28,13 @@ function handleSubmit(e){
     e.preventDefault();
     
     setWelcomeMessage(true)
-    let apiUrl = "http://localhost:3000/myjobs"
+    let apiUrl = "/jobs"
     fetch(apiUrl,{
       method: "POST",
       headers:  {'Content-Type': 'application/json'},
       body: JSON.stringify(jobDetails)
     })
-    alert(`${jobDetails.title} role posted successfully`)
+    // alert(`${jobDetails.title} role posted successfully`)
   }
 
   function handleClearing(e){
