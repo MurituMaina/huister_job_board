@@ -5,8 +5,6 @@ import './ViewJobs.css'
 function ViewJobs() {
     const [jobs, setJobs] = useState([])
  
-
-
     let apiUrl = "/jobs"
     useEffect(() => {
       fetch(apiUrl)
@@ -16,7 +14,7 @@ function ViewJobs() {
 
     }) 
     
-    },[])
+  },[apiUrl])
         
     function deleteRecord(id){
         fetch(`/jobs/${id}`,{
@@ -53,7 +51,7 @@ function ViewJobs() {
                    <tbody>
                         <tr key={i} value={jobs}>
                         <td>
-                          <a class="action" title="Delete" data-toggle="tooltip" onClick={()=>deleteRecord(jobs.id)}>Delete</a>
+                        <button  class="action" title="Delete" data-toggle="tooltip" onClick={()=>deleteRecord(jobs.id)}>Delete</button>
                         </td>
                         </tr>
                    </tbody>

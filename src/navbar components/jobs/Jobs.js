@@ -10,7 +10,7 @@ function Job() {
     description: ""    
     })
    
-   const [welcomeMessage, setWelcomeMessage] = useState(false)
+  //  const [welcomeMessage, setWelcomeMessage] = useState(false)
    
  function addData(event){
   event.preventDefault();
@@ -27,7 +27,7 @@ function Job() {
 function handleSubmit(e){
     e.preventDefault();
     
-    setWelcomeMessage(true)
+    // setWelcomeMessage(true)
     let apiUrl = "/jobs"
     fetch(apiUrl,{
       method: "POST",
@@ -39,7 +39,7 @@ function handleSubmit(e){
 
   function handleClearing(e){
     e.preventDefault();
-    setWelcomeMessage(false)
+    // setWelcomeMessage(false)
     setJobDetails({
       title: "",
       company: "",

@@ -3,25 +3,13 @@ import { useState } from "react";
 // import { useNavigate } from "react-router-dom";
 
 const PostJob = ({ onLogin }) => {
-  // const navigate = useNavigate();
   const [email, setEmail] = useState("");
-  const [password_digest, setPasswordDigest] = useState("");
-  // const [errors, setErrors] = useState([]);
-  // const [authenticated, setAuthenticated] = useState(
-  // localStorage.getItem(localStorage.getItem("authenticated") || false)
-  // );
-  // const users = [{ username: "dc@gmail.com", password: "123" }];
-  // const navigate = useNavigate();
+  const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = (e) => {
-    e.preventDefault(); 
-    // const account = users.find((user) => user.username === username);
-    // if (account && account.password === password) {
-    // localStorage.setItem("authenticated", true);
-    // navigate("/ViewJobs");
-    // }
-    console.log(email, password_digest);
+    e.preventDefault();
+    console.log(email, password);
     fetch("/login", {
       method: "POST",
       headers: {
@@ -29,12 +17,14 @@ const PostJob = ({ onLogin }) => {
       },
       body: JSON.stringify({
         email,
-        password_digest,
+        password,
       }),
     }).then((r) => {
       setIsLoading(false);
       if (r.ok) {
-        r.json().then((recruiter) => onLogin(recruiter));
+        r.json().then((recruiter) => {
+          onLogin(recruiter);
+        });
       } else {
         r.json().then((err) => console.log(err));
       }
@@ -60,12 +50,16 @@ const PostJob = ({ onLogin }) => {
           <input
             type="password"
             autoComplete="current-password"
-            value={password_digest}
-            onChange={(e) => setPasswordDigest(e.target.value)}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
             name="password"
           />
         </div>
-          <button type="submit" className="primary" onClick={() => handleSubmit()}>
+        <button
+          type="submit"
+          className="primary"
+          onClick={() => handleSubmit()}
+        >
           {/* Submit */}
           {isLoading ? "Loading..." : "Login"}
         </button>
