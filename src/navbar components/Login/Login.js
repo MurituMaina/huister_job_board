@@ -1,6 +1,8 @@
 import "./Login.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+// import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+// import ViewJobs from "../viewJobs/ViewJobs";
 
 const PostJob = () => {
   const [email, setEmail] = useState("");
@@ -68,10 +70,18 @@ const PostJob = () => {
           {/* Submit */}
           {isLoading ? "Loading..." : "Login"}
         </button>
-        <div>
-          {/* {errors.map((error) => (<Error key={error}>{error}</Error>
-          ))} */}
-        </div>
+        {/* <div>
+            <Router>
+          <nav className="navbar">
+            <div>
+              <Link to="/ViewJobs">VIEW JOBS</Link>
+            </div>
+          </nav>
+          <Routes>
+            <Route path="/ViewJobs" element={<ViewJobs />} />
+          </Routes>
+        </Router>
+        </div> */}
       </form>
     </div>
   );
