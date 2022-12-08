@@ -2,7 +2,7 @@ import "./Login.css";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const PostJob = ({ onLogin }) => {
+const PostJob = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -10,7 +10,8 @@ const PostJob = ({ onLogin }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(email, password);
+    // console.log(email, password);
+    
     fetch("/login", {
       method: "POST",
       headers: {
@@ -24,8 +25,9 @@ const PostJob = ({ onLogin }) => {
       setIsLoading(false);
       if (r.ok) {
         r.json().then((recruiter) => {
-          onLogin(recruiter);
-          navigate("/")
+          // onLogin(recruiter);
+          // navigate("/")
+          navigate("/ViewJobs")
 
         });
       } else {
