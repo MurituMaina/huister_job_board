@@ -53,6 +53,12 @@
       "company": "KU",
       "description": "Teaching",
       "id": 9
+    },
+    {
+      "title": "Sales Agent",
+      "company": "Marketing Coop",
+      "description": "Sales and marketing",
+      "id": 10
     }
   ]
 }

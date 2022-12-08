@@ -4,11 +4,11 @@ import { useNavigate } from "react-router-dom";
 
 const PostJob = () => {
   // const navigate = useNavigate();
-  const [username, setusername] = useState("");
-  const [password, setpassword] = useState("");
-  const [authenticated, setauthenticated] = useState(
-  localStorage.getItem(localStorage.getItem("authenticated") || false)
-);
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+//   const [authenticated, setauthenticated] = useState(
+//   localStorage.getItem(localStorage.getItem("authenticated") || false)
+// );
   const users = [{ username: "dc@gmail.com", password: "123" }];
   const navigate = useNavigate();
   
