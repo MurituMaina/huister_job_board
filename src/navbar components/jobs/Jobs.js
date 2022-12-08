@@ -10,7 +10,7 @@ function Job() {
     description: ""    
     })
    
-  //  const [welcomeMessage, setWelcomeMessage] = useState(false)
+   const [welcomeMessage, setWelcomeMessage] = useState(false)
    
  function addData(event){
   event.preventDefault();
@@ -27,19 +27,19 @@ function Job() {
 function handleSubmit(e){
     e.preventDefault();
     
-    // setWelcomeMessage(true)
-    let apiUrl = "/jobs"
+    setWelcomeMessage(true)
+    let apiUrl = "http://localhost:3000/myjobs"
     fetch(apiUrl,{
       method: "POST",
       headers:  {'Content-Type': 'application/json'},
       body: JSON.stringify(jobDetails)
     })
-    // alert(`${jobDetails.title} role posted successfully`)
+    alert(`${jobDetails.title} role posted successfully`)
   }
 
   function handleClearing(e){
     e.preventDefault();
-    // setWelcomeMessage(false)
+    setWelcomeMessage(false)
     setJobDetails({
       title: "",
       company: "",
