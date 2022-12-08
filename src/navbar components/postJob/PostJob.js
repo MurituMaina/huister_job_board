@@ -22,6 +22,7 @@ const PostJob = () => {
     return (
       <div>
         <form className="form" onSubmit={handleSubmit}>
+          <fieldset><legend>RECRUITERS DETAILS</legend>
           <div className="input-group">
             <label htmlFor="email">Email</label>
             <input type="email" name="email" placeholder="nome@email.com.br" />
@@ -30,7 +31,8 @@ const PostJob = () => {
             <label htmlFor="password">Password</label>
             <input type="password" name="password" />
           </div>
-          <button className="primary">Submit</button>
+            <button className="primary">Submit</button>
+            </fieldset>
         </form>
       </div>
     );
