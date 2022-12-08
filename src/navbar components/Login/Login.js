@@ -1,11 +1,12 @@
 import "./Login.css";
 import { useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const PostJob = ({ onLogin }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,6 +25,8 @@ const PostJob = ({ onLogin }) => {
       if (r.ok) {
         r.json().then((recruiter) => {
           onLogin(recruiter);
+          navigate("/")
+
         });
       } else {
         r.json().then((err) => console.log(err));
