@@ -12,7 +12,7 @@ function ViewJobs() {
       .then((jsonfile) => {
         setJobs(jsonfile);
       });
-  }, [apiUrl]);
+  }, [apiUrl,jobs]);
 
   function deleteRecord(id) {
     fetch(`/jobs/${id}`, {
