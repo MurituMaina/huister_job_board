@@ -22,7 +22,8 @@ function App() {
 
   return (
    <div className='App'>
-    <Navbar />
+    <Navbar recruiter = {recruiter}/>
+    {console.log("Hello World", recruiter.id)}
     {/* <LoginForm /> */}
 
    </div>

@@ -1,14 +1,14 @@
 import "./Login.css";
 import { useState } from "react";
 import Error from "../Error";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 
-const LoginForm = () => {
+const LoginForm = ({onLogin}) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState([]);
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -25,9 +25,9 @@ const LoginForm = () => {
       setIsLoading(false);
       if (r.ok) {
         r.json().then((recruiter) => {
-          // onLogin(recruiter);
+          onLogin(recruiter);
           // console.log(email, password);
-          navigate("/ViewJobs")
+          // navigate("/ViewJobs")
         });
       } else {
         r.json().then((err) => setError(err.errors));

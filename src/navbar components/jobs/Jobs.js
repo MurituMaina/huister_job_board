@@ -2,31 +2,33 @@ import React from 'react';
 import "./jobs.css";
 import { useState} from "react";
 
-function Job() {
+function Job({recruiter}) {
   
   const [jobDetails, setJobDetails] = useState({
     title: "",
     company: "",
-    description: ""    
+    description: "",
+    recruiter_id: ""
     })
    
   //  const [welcomeMessage, setWelcomeMessage] = useState(false)
-   
  function addData(event){
   event.preventDefault();
   const fieldNames = event.target.getAttribute('name');
   const fieldValues = event.target.value;
+// jobDetails.recruiter_id = recruiter.id
 
   const newEntries = {...jobDetails};
   newEntries[fieldNames] = fieldValues;
 
   setJobDetails(newEntries);
+  console.log(recruiter.id);
   console.log(`${newEntries}`)
 };
 
 function handleSubmit(e){
     e.preventDefault();
-    
+    console.log(jobDetails);
     // setWelcomeMessage(true)
     let apiUrl = "/jobs"
     fetch(apiUrl,{

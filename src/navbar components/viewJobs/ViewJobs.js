@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import "./ViewJobs.css";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
-function ViewJobs() {
+function ViewJobs({recruiter}) {
   const [jobs, setJobs] = useState([]);
+  const [deleteJob, setDeleteJob] = useState(false);
 
   let apiUrl = "/jobs";
   useEffect(() => {
@@ -12,8 +13,8 @@ function ViewJobs() {
       .then((jsonfile) => {
         setJobs(jsonfile);
       });
-  }, [apiUrl,jobs]);
-
+  }, [apiUrl,deleteJob]);
+console.log(recruiter);
   function deleteRecord(id) {
     fetch(`/jobs/${id}`, {
       method: `DELETE`,
@@ -23,6 +24,7 @@ function ViewJobs() {
         // console.log(resp);
         // (jsonfile) => {
         setJobs(resp);
+        setDeleteJob(true);
       });
     });
   }
