@@ -1,3 +1,17 @@
-.hiring-company{
-    background-color: black;
+.hiring-company {
+  background-color: black;
+}
+
+.table-data {
+  margin-top: 10%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  row-gap: 10px;
+  column-gap: 10px;
+}
+
+.data-table {
+  box-shadow: 1px 2px 4px blue;
+  border-radius: 15px;
 }
