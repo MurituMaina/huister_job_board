@@ -1,13 +1,15 @@
 import "./Login.css";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import Error from "../Error";
+// import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+// import ViewJobs from "../viewJobs/ViewJobs";
 
-const PostJob = () => {
+const PostJob = (onLogin) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const navigate = useNavigate()
-
+  // const navigate = useNavigate()
+  const [error, setError] = useState([]);
   const handleSubmit = (e) => {
     e.preventDefault();
     // console.log(email, password);
@@ -25,13 +27,15 @@ const PostJob = () => {
       setIsLoading(false);
       if (r.ok) {
         r.json().then((recruiter) => {
-          // onLogin(recruiter);
+          onLogin(recruiter);
           // navigate("/")
-          navigate("/ViewJobs")
+          // navigate("/ViewJobs")
 
         });
       } else {
-        r.json().then((err) => console.log(err));
+        r.json().then((err) => 
+        // console.log(err));
+          setError(err.errors));
       }
     });
   };
@@ -68,9 +72,22 @@ const PostJob = () => {
           {/* Submit */}
           {isLoading ? "Loading..." : "Login"}
         </button>
+        {/* <div>
+            <Router>
+          <nav className="navbar">
+            <div>
+              <Link to="/ViewJobs">VIEW JOBS</Link>
+            </div>
+          </nav>
+          <Routes>
+            <Route path="/ViewJobs" element={<ViewJobs />} />
+          </Routes>
+        </Router>
+        </div> */}
         <div>
-          {/* {errors.map((error) => (<Error key={error}>{error}</Error>
-          ))} */}
+          { error.map((error) => (
+            <Error key={ error }>{ error }</Error>
+          )) }
         </div>
       </form>
     </div>
