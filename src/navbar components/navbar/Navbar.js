@@ -7,15 +7,25 @@ import AvailableJobs from "../AvailableJobs/AvailableJobs";
 import Jobs from "../jobs/Jobs";
 
 
-const Navbar = () => {
+const Navbar = ({recruiter, setRecruiter}) => {
+  // if
+  function handleLogoutClick() {
+    fetch("/logout", { method: "DELETE" }).then((r) => {
+      if (r.ok) {
+        setRecruiter(null);
+      }
+    });
+  }
   return (
+    <header>
     <Router>
       <nav className="navbar">
         <div>
-          <Link to="/">HOME</Link>
-          <Link to="/Login">LOGIN</Link>
+          <Link to="/">Home</Link>
+          <Link to="/Login">Login</Link>
           {/* <Link to="/ViewJobs">VIEW JOBS</Link> */}
           <Link to="/AvailableJobs">Available Jobs</Link>
+          <Link to="/logout">Logout</Link>
         </div>
       </nav>
       <Routes>
@@ -26,6 +36,7 @@ const Navbar = () => {
         <Route path="/Jobs" element={<Jobs />} />
       </Routes>
     </Router>
+    </header>
   );
 };
 

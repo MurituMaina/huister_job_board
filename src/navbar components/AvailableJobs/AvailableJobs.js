@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Navbar from "../navbar/Navbar";
 import "./AvailableJobs.css";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -39,20 +40,24 @@ function ViewJobs() {
 
   return (
     <>
-      <div>
-        <p id="caption">
+    {/* <Navbar /> */}
+      {/* <p id="caption">
+        <b>Posted Jobs</b>
+      </p> */}
+      <div className="table-data">
+        {/* <p id="caption">
           <b>Posted Jobs</b>
-        </p>
+        </p> */}
         {jobs.map((jobs, i) => {
           return (
-            <table>
-              <thead class="thead-dark">
+            <table className="data-table">
+              <thead >
                 <tr className="table-head">
                   <th scope="col">Job Title</th>
                   <td>{jobs.title}</td>
                 </tr>
-                <tr className="hiring-company">
-                  <th scope="col">Hiring Company</th>
+                <tr scope="col" className="hiring-company">
+                  <th >Hiring Company</th>
                   <td>{jobs.company}</td>
                 </tr>
                 <tr>
@@ -71,7 +76,7 @@ function ViewJobs() {
                   <td>
                     <button
                       class="action"
-                      title="Update"
+                      title="Apply"
                       data-toggle="tooltip"
                       onClick={() => updateRecord(jobs.id)}
                     >
