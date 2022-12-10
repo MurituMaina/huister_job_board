@@ -56,7 +56,7 @@ function ViewJobs() {
                   <th scope="col">Job Title</th>
                   <td>{jobs.title}</td>
                 </tr>
-                <tr className="hiring-company">
+                <tr scope="col" className="hiring-company">
                   <th >Hiring Company</th>
                   <td>{jobs.company}</td>
                 </tr>

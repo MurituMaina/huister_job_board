@@ -1,9 +1,5 @@
-.hiring-company {
-  background-color: black;
-}
-
 .table-data {
-  margin-top: 10%;
+  margin-top: 2%;
   width: 100%;
   display: grid;
   grid-template-columns: 50% 50%;
