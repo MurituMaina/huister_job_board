@@ -7,7 +7,19 @@ import ViewJobs from "../viewJobs/ViewJobs";
 import Jobs from "../jobs/Jobs";
 
 
-const Navbar = ({recruiter}) => {
+
+const Navbar = ({recruiter, setRecruiter}) => {
+
+  function handleLogoutClick() {
+    fetch("/logout", { method: "DELETE" }).then((r) => {
+      if (r.ok) {
+        setRecruiter(null);
+      }
+    });
+  }
+
+
+
   return (
     <Router>
       <nav className="navbar">
@@ -16,7 +28,7 @@ const Navbar = ({recruiter}) => {
           {/* <Link to="/LoginForm">LOGIN</Link> */}
           <Link to="/ViewJobs">VIEW JOBS</Link>
           <Link to="/Jobs">Jobs</Link>
-          {/* <Link to="/logout">Logout</Link> */}
+          <Link to="/logout" onClick={handleLogoutClick}>Logout</Link>
         </div>
       </nav>
       <Routes>
