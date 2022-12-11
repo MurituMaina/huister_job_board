@@ -30,7 +30,7 @@ function handleSubmit(e){
     e.preventDefault();
     console.log(jobDetails);
     // setWelcomeMessage(true)
-  let apiUrl = "https://hustlerjobboard-production.up.railway.app/jobs"
+  let apiUrl = "/jobs"
     fetch(apiUrl,{
       method: "POST",
       headers:  {'Content-Type': 'application/json'},

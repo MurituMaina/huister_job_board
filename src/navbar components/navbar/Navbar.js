@@ -16,7 +16,7 @@ const Navbar = ({recruiter}) => {
           {/* <Link to="/LoginForm">LOGIN</Link> */}
           <Link to="/ViewJobs">VIEW JOBS</Link>
           <Link to="/Jobs">Jobs</Link>
-          <Link to="/logout">Logout</Link>
+          {/* <Link to="/logout">Logout</Link> */}
         </div>
       </nav>
       <Routes>
@@ -24,6 +24,7 @@ const Navbar = ({recruiter}) => {
         {/* <Route path="/LoginForm" element={<LoginForm/>} /> */}
         <Route path="/ViewJobs" element={<ViewJobs recruiter={recruiter} />} />
         <Route path="/Jobs" element={<Jobs recruiter={recruiter} />} />
+        {/* <Router variant="outline"onClick=""  element={<Logout />}/> */}
       </Routes>
       {recruiter.email}
     </Router>

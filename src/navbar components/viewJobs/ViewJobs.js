@@ -6,7 +6,7 @@ function ViewJobs({recruiter}) {
   const [jobs, setJobs] = useState([]);
   const [deleteJob, setDeleteJob] = useState(false);
 
-  let apiUrl = "https://hustlerjobboard-production.up.railway.app/jobs";
+  let apiUrl = "/jobs";
   useEffect(() => {
     fetch(apiUrl)
       .then((res) => res.json())
@@ -16,7 +16,7 @@ function ViewJobs({recruiter}) {
   }, [apiUrl,deleteJob]);
 console.log(recruiter);
   function deleteRecord(id) {
-    fetch(`https://hustlerjobboard-production.up.railway.app/jobs/${id}`, {
+    fetch(`/jobs/${id}`, {
       method: `DELETE`,
     }).then((result) => {
       result.json().then((resp) => {
