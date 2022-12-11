@@ -5,7 +5,7 @@ import "./ViewJobs.css";
 function ViewJobs() {
   const [jobs, setJobs] = useState([]);
 
-  let apiUrl = "/jobs";
+  let apiUrl = "https://hustlerjobboard-production.up.railway.app/jobs";
   useEffect(() => {
     fetch(apiUrl)
       .then((res) => res.json())
@@ -15,7 +15,7 @@ function ViewJobs() {
   }, [apiUrl]);
 
   function deleteRecord(id) {
-    fetch(`/jobs/${id}`, {
+    fetch(`https://hustlerjobboard-production.up.railway.app/jobs/${id}`, {
       method: `DELETE`,
     }).then((result) => {
       result.json().then((resp) => {
@@ -39,13 +39,14 @@ function ViewJobs() {
 
   return (
     <>
-      <div>
+      <div className="table-data">
         <p id="caption">
           <b>Posted Jobs</b>
         </p>
+        <br></br>
         {jobs.map((jobs, i) => {
           return (
-            <table>
+            <table className="data-table">
               <thead class="thead-dark">
                 <tr className="table-head">
                   <th scope="col">Job Title</th>
