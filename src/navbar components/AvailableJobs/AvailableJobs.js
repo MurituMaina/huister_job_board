@@ -6,7 +6,7 @@ import "../jobs/Jobs";
 function ViewJobs() {
   const [jobs, setJobs] = useState([]);
 
-  let apiUrl = "https://hustlerjobboard-production.up.railway.app/jobs";
+  let apiUrl = "/jobs";
   useEffect(() => {
     fetch(apiUrl)
       .then((res) => res.json())
@@ -28,7 +28,7 @@ function ViewJobs() {
   //   });
   // }
   function updateRecord(id) {
-    fetch(`https://hustlerjobboard-production.up.railway.app/jobs/${id}`, {
+    fetch(`/jobs/${id}`, {
       method: `PATCH`,
     }).then((result) => {
       result.json().then((resp) => {
