@@ -113,6 +113,7 @@ table tr:nth-child(even) {
   background-color: none;
 }
 
+
 table tr:hover {
   background-color: #008080;
 }
@@ -123,6 +124,7 @@ table th {
   text-align: left;
   text-align: center;
 }
+
 .table-head {
   font-size: 25px;
 }
@@ -157,4 +159,5 @@ table th {
   font-size: 30px;
   text-align: center;
   margin-top: 10px;
+
 }

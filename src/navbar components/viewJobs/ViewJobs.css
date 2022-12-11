@@ -2,7 +2,7 @@
     background-color: black;
 }
 
-table-data {
+.table-data {
   margin-top: 2%;
   width: 100%;
   display: grid;

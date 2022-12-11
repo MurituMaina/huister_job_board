@@ -32,12 +32,13 @@ const Navbar = ({ recruiter, setRecruiter }) => {
         <Routes>
           <Route exact path="/" element={ <Home /> } />
           <Route path="/Login" element={ <PostJob /> } />
-          <Route path="/ViewJobs" element={ <ViewJobs /> } />
+          <Route path="/ViewJobs" element={<ViewJobs />} />
           <Route path="/AvailableJobs" element={ <AvailableJobs /> } />
           <Route path="/Jobs" element={ <Jobs /> } />
-          <Route path="/" element={ <Home /> } />
+          <Route path="/" element={<Home />} />
         </Routes>
-      </Router>    </header>
+      </Router>
+    </header>
   );
 };
 
