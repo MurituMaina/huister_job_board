@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "../navbar/Navbar";
-import "./AvailableJobs.css";
+import "../jobs/Jobs";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 
 function ViewJobs() {
   const [jobs, setJobs] = useState([]);
 
-  let apiUrl = "/jobs";
+  let apiUrl = "https://hustlerjobboard-production.up.railway.app/jobs";
   useEffect(() => {
     fetch(apiUrl)
       .then((res) => res.json())
@@ -28,7 +28,7 @@ function ViewJobs() {
   //   });
   // }
   function updateRecord(id) {
-    fetch(`/jobs/${id}`, {
+    fetch(`https://hustlerjobboard-production.up.railway.app/jobs/${id}`, {
       method: `PATCH`,
     }).then((result) => {
       result.json().then((resp) => {

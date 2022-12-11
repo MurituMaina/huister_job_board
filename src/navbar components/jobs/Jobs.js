@@ -28,7 +28,7 @@ function handleSubmit(e){
     e.preventDefault();
     
     // setWelcomeMessage(true)
-    let apiUrl = "/jobs"
+  let apiUrl = "https://hustlerjobboard-production.up.railway.app/jobs"
     fetch(apiUrl,{
       method: "POST",
       headers:  {'Content-Type': 'application/json'},

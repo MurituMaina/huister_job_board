@@ -16,5 +16,6 @@
    
    .navbar a:hover {
      color: #070103;
-     background-color: aliceblue;
+     background-color: orange;
+     transition: ease-in-out .6s;
    }
